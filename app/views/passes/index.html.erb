@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to new_pass_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Pass
+  <% end %>
+  <h1>Listing passes</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Programa</th>
+            <th>Usuario</th>
+            <th>Clave</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @passes) do |pass| %>
+            <td><%= pass.programa %></td>
+            <td><%= pass.usuario %></td>
+            <td><%= pass.clave %></td>
+            <td><%= link_to 'Show', pass %></td>
+        <td><%= link_to 'Edit', edit_pass_path(pass) %></td>
+        <td><%= link_to 'Destroy', pass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

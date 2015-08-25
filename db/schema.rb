@@ -11,7 +11,77 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825134241) do
+ActiveRecord::Schema.define(version: 20150825140328) do
+
+  create_table "attaches", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "device_maintenances", force: true do |t|
+    t.date     "fechaMantenmiento"
+    t.boolean  "correctivo"
+    t.string   "prioridad"
+    t.boolean  "leido"
+    t.boolean  "completado"
+    t.string   "realizadoPor"
+    t.text     "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "devices", force: true do |t|
+    t.string   "marca"
+    t.boolean  "impresora"
+    t.boolean  "scanner"
+    t.boolean  "red"
+    t.string   "direccion"
+    t.date     "ultimoMantenimiento"
+    t.integer  "frecuencia"
+    t.string   "ubicación"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "drives", force: true do |t|
+    t.string   "letra"
+    t.string   "ruta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "installs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "outlooks", force: true do |t|
+    t.string   "correo"
+    t.string   "clave"
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "passes", force: true do |t|
+    t.string   "programa"
+    t.string   "usuario"
+    t.string   "clave"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pc_maintenances", force: true do |t|
+    t.date     "fechaMantenmiento"
+    t.boolean  "correctivo"
+    t.string   "prioridad"
+    t.boolean  "leido"
+    t.boolean  "completado"
+    t.string   "realizadoPor"
+    t.text     "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pcs", force: true do |t|
     t.string   "nombre"
@@ -41,6 +111,14 @@ ActiveRecord::Schema.define(version: 20150825134241) do
     t.string   "usuarioComputador"
     t.string   "claveComputador"
     t.string   "drivers"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "programs", force: true do |t|
+    t.string   "nombre"
+    t.string   "version"
+    t.integer  "licencias"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

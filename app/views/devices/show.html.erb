@@ -1,0 +1,38 @@
+<div class="page-header">
+  <%= link_to devices_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_device_path(@device), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show device</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Marca:</dt>
+  <dd><%= @device.marca %></dd>
+
+  <dt>Impresora:</dt>
+  <dd><%= @device.impresora %></dd>
+
+  <dt>Scanner:</dt>
+  <dd><%= @device.scanner %></dd>
+
+  <dt>Red:</dt>
+  <dd><%= @device.red %></dd>
+
+  <dt>Direccion:</dt>
+  <dd><%= @device.direccion %></dd>
+
+  <dt>Ultimomantenimiento:</dt>
+  <dd><%= @device.ultimoMantenimiento %></dd>
+
+  <dt>Frecuencia:</dt>
+  <dd><%= @device.frecuencia %></dd>
+
+  <dt>Ubicación:</dt>
+  <dd><%= @device.ubicación %></dd>
+
+</dl>

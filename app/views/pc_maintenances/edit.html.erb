@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to pc_maintenances_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to @pc_maintenance, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Show
+  <% end %>
+  <h1>Editing pc_maintenance</h1>
+</div>
+
+<%= render 'form' %>

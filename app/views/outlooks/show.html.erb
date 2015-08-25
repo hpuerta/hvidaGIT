@@ -1,0 +1,23 @@
+<div class="page-header">
+  <%= link_to outlooks_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_outlook_path(@outlook), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show outlook</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Correo:</dt>
+  <dd><%= @outlook.correo %></dd>
+
+  <dt>Clave:</dt>
+  <dd><%= @outlook.clave %></dd>
+
+  <dt>Nombre:</dt>
+  <dd><%= @outlook.nombre %></dd>
+
+</dl>

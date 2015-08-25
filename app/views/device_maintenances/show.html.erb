@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to device_maintenances_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_device_maintenance_path(@device_maintenance), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show device_maintenance</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Fechamantenmiento:</dt>
+  <dd><%= @device_maintenance.fechaMantenmiento %></dd>
+
+  <dt>Correctivo:</dt>
+  <dd><%= @device_maintenance.correctivo %></dd>
+
+  <dt>Prioridad:</dt>
+  <dd><%= @device_maintenance.prioridad %></dd>
+
+  <dt>Leido:</dt>
+  <dd><%= @device_maintenance.leido %></dd>
+
+  <dt>Completado:</dt>
+  <dd><%= @device_maintenance.completado %></dd>
+
+  <dt>Realizadopor:</dt>
+  <dd><%= @device_maintenance.realizadoPor %></dd>
+
+  <dt>Descripcion:</dt>
+  <dd><%= @device_maintenance.descripcion %></dd>
+
+</dl>

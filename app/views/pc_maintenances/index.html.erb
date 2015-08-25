@@ -1,0 +1,41 @@
+<div class="page-header">
+  <%= link_to new_pc_maintenance_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Pc maintenance
+  <% end %>
+  <h1>Listing pc_maintenances</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Fechamantenmiento</th>
+            <th>Correctivo</th>
+            <th>Prioridad</th>
+            <th>Leido</th>
+            <th>Completado</th>
+            <th>Realizadopor</th>
+            <th>Descripcion</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @pc_maintenances) do |pc_maintenance| %>
+            <td><%= pc_maintenance.fechaMantenmiento %></td>
+            <td><%= pc_maintenance.correctivo %></td>
+            <td><%= pc_maintenance.prioridad %></td>
+            <td><%= pc_maintenance.leido %></td>
+            <td><%= pc_maintenance.completado %></td>
+            <td><%= pc_maintenance.realizadoPor %></td>
+            <td><%= pc_maintenance.descripcion %></td>
+            <td><%= link_to 'Show', pc_maintenance %></td>
+        <td><%= link_to 'Edit', edit_pc_maintenance_path(pc_maintenance) %></td>
+        <td><%= link_to 'Destroy', pc_maintenance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

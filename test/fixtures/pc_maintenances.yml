@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechaMantenmiento: 2015-08-25
+  correctivo: false
+  prioridad: MyString
+  leido: false
+  completado: false
+  realizadoPor: MyString
+  descripcion: MyText
+
+two:
+  fechaMantenmiento: 2015-08-25
+  correctivo: false
+  prioridad: MyString
+  leido: false
+  completado: false
+  realizadoPor: MyString
+  descripcion: MyText

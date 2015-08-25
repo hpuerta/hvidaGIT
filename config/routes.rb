@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  resources :attaches
+
+  resources :installs
+
+  resources :passes
+
+  resources :drives
+
+  resources :outlooks
+
+  resources :devices
+
+  resources :pc_maintenances
+
+  resources :programs
+
+  resources :device_maintenances
+
   resources :pcs
 
   # The priority is based upon order of creation: first created -> highest priority.

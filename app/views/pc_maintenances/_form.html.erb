@@ -1,0 +1,62 @@
+<%= form_for(@pc_maintenance, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @pc_maintenance.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@pc_maintenance.errors.count, "error") %> prohibited this pc_maintenance from being saved:</h4>
+
+      <ul>
+      <% @pc_maintenance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :fechaMantenmiento, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.date_select :fechaMantenmiento, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :correctivo, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :correctivo, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :prioridad, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :prioridad, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :leido, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :leido, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :completado, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :completado, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :realizadoPor, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :realizadoPor, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :descripcion, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :descripcion, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

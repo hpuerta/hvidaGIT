@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to new_attach_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Attach
+  <% end %>
+  <h1>Listing attaches</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @attaches) do |attach| %>
+            <td><%= link_to 'Show', attach %></td>
+        <td><%= link_to 'Edit', edit_attach_path(attach) %></td>
+        <td><%= link_to 'Destroy', attach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

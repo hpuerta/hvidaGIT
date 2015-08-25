@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to pc_maintenances_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_pc_maintenance_path(@pc_maintenance), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show pc_maintenance</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Fechamantenmiento:</dt>
+  <dd><%= @pc_maintenance.fechaMantenmiento %></dd>
+
+  <dt>Correctivo:</dt>
+  <dd><%= @pc_maintenance.correctivo %></dd>
+
+  <dt>Prioridad:</dt>
+  <dd><%= @pc_maintenance.prioridad %></dd>
+
+  <dt>Leido:</dt>
+  <dd><%= @pc_maintenance.leido %></dd>
+
+  <dt>Completado:</dt>
+  <dd><%= @pc_maintenance.completado %></dd>
+
+  <dt>Realizadopor:</dt>
+  <dd><%= @pc_maintenance.realizadoPor %></dd>
+
+  <dt>Descripcion:</dt>
+  <dd><%= @pc_maintenance.descripcion %></dd>
+
+</dl>

@@ -1,0 +1,43 @@
+<div class="page-header">
+  <%= link_to new_device_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Device
+  <% end %>
+  <h1>Listing devices</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Marca</th>
+            <th>Impresora</th>
+            <th>Scanner</th>
+            <th>Red</th>
+            <th>Direccion</th>
+            <th>Ultimomantenimiento</th>
+            <th>Frecuencia</th>
+            <th>Ubicación</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @devices) do |device| %>
+            <td><%= device.marca %></td>
+            <td><%= device.impresora %></td>
+            <td><%= device.scanner %></td>
+            <td><%= device.red %></td>
+            <td><%= device.direccion %></td>
+            <td><%= device.ultimoMantenimiento %></td>
+            <td><%= device.frecuencia %></td>
+            <td><%= device.ubicación %></td>
+            <td><%= link_to 'Show', device %></td>
+        <td><%= link_to 'Edit', edit_device_path(device) %></td>
+        <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,2 @@
+module DeviceMaintenancesHelper
+end
