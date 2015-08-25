@@ -15,6 +15,7 @@ class PcsController < ApplicationController
   # GET /pcs/new
   def new
     @pc = Pc.new
+    #@pc = Pc.build
   end
 
   # GET /pcs/1/edit
@@ -25,7 +26,8 @@ class PcsController < ApplicationController
   # POST /pcs.json
   def create
     @pc = Pc.new(pc_params)
-
+    puts "Parametros"
+    puts pc_params.inspect
     respond_to do |format|
       if @pc.save
         format.html { redirect_to @pc, notice: 'Pc was successfully created.' }
@@ -69,6 +71,6 @@ class PcsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pc_params
-      params.require(:pc).permit(:nombre, :descripcion, :encargado, :area, :codigoContable, :factura, :fechaCompra, :garantia, :marca, :so, :serialSo, :office, :serialOffice, :procesador, :velocidad, :ram, :discoDuro, :antivirus, :cdrom, :d312, :lectorMemorias, :internet, :ultimoMantenimiento, :frecuencia, :usuarioComputador, :claveComputador, :drivers)
+      params.require(:pc).permit(:nombre, :descripcion, :encargado, :area, :codigoContable, :factura, :fechaCompra, :garantia, :marca, :so, :serialSo, :office, :serialOffice, :procesador, :velocidad, :ram, :discoDuro, :antivirus, :cdrom, :d312, :lectorMemorias, :internet, :ultimoMantenimiento, :frecuencia, :usuarioComputador, :claveComputador, :drivers,installs_attributes: [:pc_id, :program_id,program_attributes: [:nombre]])
     end
 end

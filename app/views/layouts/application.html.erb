@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Starter Template for Bootstrap</title>
+  <title>Soporte de Sitemas - v1.0</title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -27,13 +27,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "Project name", "#", class: "navbar-brand" %>
+        <%= link_to "Soporte", root_path, class: "navbar-brand" %>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><%= link_to "Equipos", pcs_path %></li>
+          <li><%= link_to "Dispositivos", devices_path%></li>
+          <li><%= link_to "Mantenimientos Equipos", pc_maintenances_path %></li>
+          <li><%= link_to "Mantenimientos Dispositivos", device_maintenances_path%></li>
+          <li><%= link_to "Licencias", programs_path %></li>
         </ul>
       </div>
     </div>
