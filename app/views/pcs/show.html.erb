@@ -1,0 +1,95 @@
+<div class="page-header">
+  <%= link_to pcs_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_pc_path(@pc), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show pc</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Nombre:</dt>
+  <dd><%= @pc.nombre %></dd>
+
+  <dt>Descripcion:</dt>
+  <dd><%= @pc.descripcion %></dd>
+
+  <dt>Encargado:</dt>
+  <dd><%= @pc.encargado %></dd>
+
+  <dt>Area:</dt>
+  <dd><%= @pc.area %></dd>
+
+  <dt>Codigocontable:</dt>
+  <dd><%= @pc.codigoContable %></dd>
+
+  <dt>Factura:</dt>
+  <dd><%= @pc.factura %></dd>
+
+  <dt>Fechacompra:</dt>
+  <dd><%= @pc.fechaCompra %></dd>
+
+  <dt>Garantia:</dt>
+  <dd><%= @pc.garantia %></dd>
+
+  <dt>Marca:</dt>
+  <dd><%= @pc.marca %></dd>
+
+  <dt>So:</dt>
+  <dd><%= @pc.so %></dd>
+
+  <dt>Serialso:</dt>
+  <dd><%= @pc.serialSo %></dd>
+
+  <dt>Office:</dt>
+  <dd><%= @pc.office %></dd>
+
+  <dt>Serialoffice:</dt>
+  <dd><%= @pc.serialOffice %></dd>
+
+  <dt>Procesador:</dt>
+  <dd><%= @pc.procesador %></dd>
+
+  <dt>Velocidad:</dt>
+  <dd><%= @pc.velocidad %></dd>
+
+  <dt>Ram:</dt>
+  <dd><%= @pc.ram %></dd>
+
+  <dt>Discoduro:</dt>
+  <dd><%= @pc.discoDuro %></dd>
+
+  <dt>Antivirus:</dt>
+  <dd><%= @pc.antivirus %></dd>
+
+  <dt>Cdrom:</dt>
+  <dd><%= @pc.cdrom %></dd>
+
+  <dt>D312:</dt>
+  <dd><%= @pc.d312 %></dd>
+
+  <dt>Lectormemorias:</dt>
+  <dd><%= @pc.lectorMemorias %></dd>
+
+  <dt>Internet:</dt>
+  <dd><%= @pc.internet %></dd>
+
+  <dt>Ultimomantenimiento:</dt>
+  <dd><%= @pc.ultimoMantenimiento %></dd>
+
+  <dt>Frecuencia:</dt>
+  <dd><%= @pc.frecuencia %></dd>
+
+  <dt>Usuariocomputador:</dt>
+  <dd><%= @pc.usuarioComputador %></dd>
+
+  <dt>Clavecomputador:</dt>
+  <dd><%= @pc.claveComputador %></dd>
+
+  <dt>Drivers:</dt>
+  <dd><%= @pc.drivers %></dd>
+
+</dl>

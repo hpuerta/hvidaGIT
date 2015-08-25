@@ -1,0 +1,182 @@
+<%= form_for(@pc, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @pc.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@pc.errors.count, "error") %> prohibited this pc from being saved:</h4>
+
+      <ul>
+      <% @pc.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nombre, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :nombre, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :descripcion, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :descripcion, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :encargado, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :encargado, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :area, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :area, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :codigoContable, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :codigoContable, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :factura, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :factura, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fechaCompra, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.date_select :fechaCompra, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :garantia, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :garantia, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :marca, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :marca, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :so, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :so, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :serialSo, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :serialSo, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :office, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :office, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :serialOffice, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :serialOffice, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :procesador, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :procesador, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :velocidad, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :velocidad, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ram, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :ram, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :discoDuro, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :discoDuro, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :antivirus, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :antivirus, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cdrom, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :cdrom, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :d312, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :d312, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :lectorMemorias, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :lectorMemorias, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :internet, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :internet, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ultimoMantenimiento, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.date_select :ultimoMantenimiento, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :frecuencia, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :frecuencia, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :usuarioComputador, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :usuarioComputador, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :claveComputador, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :claveComputador, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :drivers, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :drivers, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

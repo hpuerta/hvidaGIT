@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  descripcion: MyString
+  encargado: MyString
+  area: MyString
+  codigoContable: MyString
+  factura: MyString
+  fechaCompra: 2015-08-25
+  garantia: 1
+  marca: MyString
+  so: MyString
+  serialSo: MyString
+  office: MyString
+  serialOffice: MyString
+  procesador: MyString
+  velocidad: 1
+  ram: 1
+  discoDuro: 1
+  antivirus: false
+  cdrom: false
+  d312: false
+  lectorMemorias: false
+  internet: false
+  ultimoMantenimiento: 2015-08-25
+  frecuencia: 1
+  usuarioComputador: MyString
+  claveComputador: MyString
+  drivers: MyString
+
+two:
+  nombre: MyString
+  descripcion: MyString
+  encargado: MyString
+  area: MyString
+  codigoContable: MyString
+  factura: MyString
+  fechaCompra: 2015-08-25
+  garantia: 1
+  marca: MyString
+  so: MyString
+  serialSo: MyString
+  office: MyString
+  serialOffice: MyString
+  procesador: MyString
+  velocidad: 1
+  ram: 1
+  discoDuro: 1
+  antivirus: false
+  cdrom: false
+  d312: false
+  lectorMemorias: false
+  internet: false
+  ultimoMantenimiento: 2015-08-25
+  frecuencia: 1
+  usuarioComputador: MyString
+  claveComputador: MyString
+  drivers: MyString

@@ -1,0 +1,81 @@
+<div class="page-header">
+  <%= link_to new_pc_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Pc
+  <% end %>
+  <h1>Listing pcs</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Encargado</th>
+            <th>Area</th>
+            <th>Codigocontable</th>
+            <th>Factura</th>
+            <th>Fechacompra</th>
+            <th>Garantia</th>
+            <th>Marca</th>
+            <th>So</th>
+            <th>Serialso</th>
+            <th>Office</th>
+            <th>Serialoffice</th>
+            <th>Procesador</th>
+            <th>Velocidad</th>
+            <th>Ram</th>
+            <th>Discoduro</th>
+            <th>Antivirus</th>
+            <th>Cdrom</th>
+            <th>D312</th>
+            <th>Lectormemorias</th>
+            <th>Internet</th>
+            <th>Ultimomantenimiento</th>
+            <th>Frecuencia</th>
+            <th>Usuariocomputador</th>
+            <th>Clavecomputador</th>
+            <th>Drivers</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @pcs) do |pc| %>
+            <td><%= pc.nombre %></td>
+            <td><%= pc.descripcion %></td>
+            <td><%= pc.encargado %></td>
+            <td><%= pc.area %></td>
+            <td><%= pc.codigoContable %></td>
+            <td><%= pc.factura %></td>
+            <td><%= pc.fechaCompra %></td>
+            <td><%= pc.garantia %></td>
+            <td><%= pc.marca %></td>
+            <td><%= pc.so %></td>
+            <td><%= pc.serialSo %></td>
+            <td><%= pc.office %></td>
+            <td><%= pc.serialOffice %></td>
+            <td><%= pc.procesador %></td>
+            <td><%= pc.velocidad %></td>
+            <td><%= pc.ram %></td>
+            <td><%= pc.discoDuro %></td>
+            <td><%= pc.antivirus %></td>
+            <td><%= pc.cdrom %></td>
+            <td><%= pc.d312 %></td>
+            <td><%= pc.lectorMemorias %></td>
+            <td><%= pc.internet %></td>
+            <td><%= pc.ultimoMantenimiento %></td>
+            <td><%= pc.frecuencia %></td>
+            <td><%= pc.usuarioComputador %></td>
+            <td><%= pc.claveComputador %></td>
+            <td><%= pc.drivers %></td>
+            <td><%= link_to 'Show', pc %></td>
+        <td><%= link_to 'Edit', edit_pc_path(pc) %></td>
+        <td><%= link_to 'Destroy', pc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
