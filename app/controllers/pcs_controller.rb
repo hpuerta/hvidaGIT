@@ -26,8 +26,6 @@ class PcsController < ApplicationController
   # POST /pcs.json
   def create
     @pc = Pc.new(pc_params)
-    puts "Parametros"
-    puts pc_params.inspect
     respond_to do |format|
       if @pc.save
         format.html { redirect_to @pc, notice: 'Pc was successfully created.' }
