@@ -15,11 +15,13 @@ class PcsController < ApplicationController
   # GET /pcs/new
   def new
     @pc = Pc.new
+    @programs = Program.all
     #@pc = Pc.build
   end
 
   # GET /pcs/1/edit
   def edit
+    @programs = Program.all
   end
 
   # POST /pcs
