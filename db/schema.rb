@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150825141444) do
     t.string   "direccion"
     t.date     "ultimoMantenimiento"
     t.integer  "frecuencia"
-    t.string   "ubicación"
+    t.string   "ubicacion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 20150825141444) do
     t.string   "office"
     t.string   "serialOffice"
     t.string   "procesador"
-    t.integer  "velocidad"
+    t.float    "velocidad"
     t.integer  "ram"
     t.integer  "discoDuro"
     t.boolean  "antivirus"

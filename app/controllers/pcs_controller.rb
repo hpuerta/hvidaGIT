@@ -16,23 +16,29 @@ class PcsController < ApplicationController
   def new
     @pc = Pc.new
     @programs = Program.all
+    @devices = Device.all
     #@pc = Pc.build
   end
 
   # GET /pcs/1/edit
   def edit
     @programs = Program.all
+    @devices = Device.all
   end
 
   # POST /pcs
   # POST /pcs.json
   def create
     @pc = Pc.new(pc_params)
+    @programs = Program.all
+    @devices = Device.all
+    
     respond_to do |format|
       if @pc.save
         format.html { redirect_to @pc, notice: 'Pc was successfully created.' }
         format.json { render :show, status: :created, location: @pc }
       else
+        #format.html { render :new }
         format.html { render :new }
         format.json { render json: @pc.errors, status: :unprocessable_entity }
       end
@@ -71,6 +77,6 @@ class PcsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pc_params
-      params.require(:pc).permit(:nombre, :descripcion, :encargado, :area, :codigoContable, :factura, :fechaCompra, :garantia, :marca, :so, :serialSo, :office, :serialOffice, :procesador, :velocidad, :ram, :discoDuro, :antivirus, :cdrom, :d312, :lectorMemorias, :internet, :ultimoMantenimiento, :frecuencia, :usuarioComputador, :claveComputador, :drivers,installs_attributes: [:pc_id, :program_id,program_attributes: [:nombre]])
+      params.require(:pc).permit(:nombre, :descripcion, :encargado, :area, :codigoContable, :factura, :fechaCompra, :garantia, :marca, :so, :serialSo, :office, :serialOffice, :procesador, :velocidad, :ram, :discoDuro, :antivirus, :cdrom, :d312, :lectorMemorias, :internet, :ultimoMantenimiento, :frecuencia, :usuarioComputador, :claveComputador, :drivers,installs_attributes: [:pc_id, :program_id,program_attributes: [:nombre,:version,:licencias]],attaches_attributes: [:pc_id, :device_id,device_attributes: [:marca, :impresora, :scanner, :red, :direccion, :ultimoMantenimiento, :frecuencia, :ubicacion]])
     end
 end

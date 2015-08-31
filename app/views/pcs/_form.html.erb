@@ -92,7 +92,7 @@
   
   <div class="form-group">
     <%= f.label :program, "Programas Instalados", class: "col-sm-2 control-label" %>
-    <div id="tabs" class="col-sm-10">
+    <div class="col-sm-10 tabs">
       <ul>
         <li><a href="#tabs-1">Listado</a></li>
         <li><a href="#tabs-2">Agregar +</a></li>
@@ -161,38 +161,34 @@
       <%= f.number_field :discoDuro, class: "form-control", placeholder: "Ej. 1000" %>
     </div>
   </div>
-  <div class="form-group">
-    <%= f.label :antivirus, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.check_box :antivirus, class: "form-control" %>
+  
+  <div class="form-group col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= f.label :antivirus, class: "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= f.check_box :antivirus, class: "form-control" %>
+        </div>
+        <%= f.label :cdrom, class: "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= f.check_box :cdrom, class: "form-control" %>
+        </div>
+        <%= f.label :d312,"Drive 3 1/2", class: "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= f.check_box :d312, class: "form-control" %>
+        </div>
+        <%= f.label :lectorMemorias, "Lector de Memorias", class: "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= f.check_box :lectorMemorias, class: "form-control" %>
+        </div>
+        <%= f.label :internet, class: "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= f.check_box :internet, class: "form-control" %>
+        </div>
+      </div>  
     </div>
   </div>
-  <div class="form-group">
-    <%= f.label :cdrom, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.check_box :cdrom, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :d312,"Drive 3 1/2", class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.check_box :d312, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :lectorMemorias, "Lector de Memorias", class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.check_box :lectorMemorias, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :internet, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.check_box :internet, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
+<div class="form-group">
     <%= f.label :ultimoMantenimiento, "Último Mantenimiento", class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.date_select :ultimoMantenimiento, class: "form-control" %>
@@ -222,6 +218,85 @@
       <%= f.text_field :drivers, class: "form-control" %>
     </div>
   </div>
+
+  <div class="form-group">
+    <%= f.label :device, "Dispositivos Instalados", class: "col-sm-2 control-label" %>
+    <div id="tabs" class="col-sm-10">
+      <ul>
+        <li><a href="#tabs-1">Listado</a></li>
+        <li><a href="#tabs-2">Agregar +</a></li>
+      </ul>
+      <div id="tabs-1">
+        <div class="form-group">
+          <% if @devices.count > 0 %>
+            <%= f.collection_check_boxes(:device_ids, @devices, :id, :device_with_where) do |b|%>
+              <span class="col-sm-6">
+                <%= b.check_box %>
+                <%= b.label %>
+              </span>
+            <% end %>
+          <% else %>
+            <div class="col-sm-12">
+              <h1 class="text-center"><span class="glyphicon glyphicon-inbox"></span></h1>
+              <h4 class="text-center">No hay dispositivos registrados<!--<br> Ingrese a la pestaña "Agregar +"--></h4>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div id="tabs-2">
+        <p>
+          <br>
+            
+            <%= f.fields_for :attaches do |m| %>
+              <%= m.fields_for :device do |p| %>
+                <div class="panel  panel-primary col-sm-6">
+                  <div class="panel-body">
+                    <div class="form-group">
+                      <%= p.label :marca, class: "col-sm-4 control-label" %>
+                      <div class="col-sm-8">
+                        <%= p.text_field :marca, class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <%= p.label :impresora, class: "col-sm-4 control-label" %>
+                      <div class="col-sm-8">
+                        <%= p.check_box :impresora, class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <%= p.label :scanner, class: "col-sm-4 control-label" %>
+                      <div class="col-sm-8">
+                        <%= p.check_box :scanner, class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <%= p.label :red, class: "col-sm-4 control-label" %>
+                      <div class="col-sm-8">
+                        <%= p.check_box :red, class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <%= p.label :direccion, class: "col-sm-4 control-label" %>
+                      <div class="col-sm-8">
+                        <%= p.text_field :direccion, class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <%= p.label :ubicacion, class: "col-sm-4 control-label" %>
+                      <div class="col-sm-8">
+                        <%= p.text_field :ubicacion, class: "form-control" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <%= f.submit "Enviar", class: "btn btn-primary" %>

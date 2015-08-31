@@ -8,7 +8,7 @@ class CreateDevices < ActiveRecord::Migration
 		t.string :direccion 
 		t.date :ultimoMantenimiento 
 		t.integer :frecuencia 
-		t.string :ubicación 
+		t.string :ubicacion 
 
       t.timestamps
     end
