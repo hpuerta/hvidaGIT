@@ -28,15 +28,16 @@ class PcsController < ApplicationController
   # POST /pcs.json
   def create
     @pc = Pc.new(pc_params)
-    respond_to do |format|
-      if @pc.save
-        format.html { redirect_to @pc, notice: 'Pc was successfully created.' }
-        format.json { render :show, status: :created, location: @pc }
-      else
-        format.html { render :new }
-        format.json { render json: @pc.errors, status: :unprocessable_entity }
-      end
-    end
+    @programs = Program.all
+    # respond_to do |format|
+    #   if @pc.save
+    #     format.html { redirect_to @pc, notice: 'Pc was successfully created.' }
+    #     format.json { render :show, status: :created, location: @pc }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @pc.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /pcs/1
