@@ -29,15 +29,23 @@ class PcsController < ApplicationController
   def create
     @pc = Pc.new(pc_params)
     @programs = Program.all
-    # respond_to do |format|
-    #   if @pc.save
-    #     format.html { redirect_to @pc, notice: 'Pc was successfully created.' }
-    #     format.json { render :show, status: :created, location: @pc }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @pc.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    @t = pc_params
+    
+    respond_to do |format|
+      if @pc.save
+        installs = @pc.installs
+        installs.each do |i|
+          if i.program.blank?
+            i.destroy
+          end
+        end
+        format.html { redirect_to @pc, notice: 'Pc was successfully created.' }
+        format.json { render :show, status: :created, location: @pc }
+      else
+        format.html { render :new }
+        format.json { render json: @pc.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /pcs/1
@@ -72,6 +80,6 @@ class PcsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pc_params
-      params.require(:pc).permit(:nombre, :descripcion, :encargado, :area, :codigoContable, :factura, :fechaCompra, :garantia, :marca, :so, :serialSo, :office, :serialOffice, :procesador, :velocidad, :ram, :discoDuro, :antivirus, :cdrom, :d312, :lectorMemorias, :internet, :ultimoMantenimiento, :frecuencia, :usuarioComputador, :claveComputador, :drivers,installs_attributes: [:pc_id, :program_id,program_attributes: [:nombre]])
+      params.require(:pc).permit(:nombre, :descripcion, :encargado, :area, :codigoContable, :factura, :fechaCompra, :garantia, :marca, :so, :serialSo, :office, :serialOffice, :procesador, :velocidad, :ram, :discoDuro, :antivirus, :cdrom, :d312, :lectorMemorias, :internet, :ultimoMantenimiento, :frecuencia, :usuarioComputador, :claveComputador, :drivers,installs_attributes: [:pc_id, :program_id,program_attributes: [:nombre,:version,:licencias]])
     end
 end
